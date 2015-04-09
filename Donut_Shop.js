@@ -56,11 +56,11 @@
     };
 
 
-    var downtown = new TopPotDonuts('downtown', {minCustomersPerHour: 8, maxCustomersPerHour: 43, avrgDonutsPerCust: 4.5});
-    var capitolHill = new TopPotDonuts('capitolHill', {minCustomersPerHour: 4, maxCustomersPerHour: 47, avrgDonutsPerCust: 2});
-    var southLakeUnion = new TopPotDonuts('southLakeUnion', {minCustomersPerHour: 9, maxCustomersPerHour: 23, avrgDonutsPerCust: 6.33});
-    var wedgewood = new TopPotDonuts('wedgewood', {minCustomersPerHour: 2, maxCustomersPerHour: 28, avrgDonutsPerCust: 1.25});
-    var ballard = new TopPotDonuts('ballard', {minCustomersPerHour: 8, maxCustomersPerHour: 58, avrgDonutsPerCust: 3.75});
+    var downtown = new TopPotDonuts('Downtown', {minCustomersPerHour: 8, maxCustomersPerHour: 43, avrgDonutsPerCust: 4.5});
+    var capitolHill = new TopPotDonuts('Capitol Hill', {minCustomersPerHour: 4, maxCustomersPerHour: 47, avrgDonutsPerCust: 2});
+    var southLakeUnion = new TopPotDonuts('South Lake Union', {minCustomersPerHour: 9, maxCustomersPerHour: 23, avrgDonutsPerCust: 6.33});
+    var wedgewood = new TopPotDonuts('Wedgewood', {minCustomersPerHour: 2, maxCustomersPerHour: 28, avrgDonutsPerCust: 1.25});
+    var ballard = new TopPotDonuts('Ballard', {minCustomersPerHour: 8, maxCustomersPerHour: 58, avrgDonutsPerCust: 3.75});
 
     downtown.dailyTotal();
     capitolHill.dailyTotal();
