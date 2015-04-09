@@ -1,15 +1,19 @@
 table {
-  width: 1200px;
+  width: 1000px;
+  height: 342;
   background-color: #DF7832;
   border: 3px solid #5B2121;
   border-spacing: .5px;
-  border-radius: 5px;
+  border-radius: 10px;
+  margin-top: -359;
+  float: right;
 }
 form {
   background-color: #A97B4A;
   font-family: arial;
   border-radius: 5px;
   width: 200px;
+  float: left;
 }
 p {
   background-color: #87B8F2;
