@@ -1,11 +1,15 @@
 
 
     var TopPotDonuts = window.TopPotDonuts;
+    var clearButton = document.getElementById('clear');
 
     //Make event listener on data entry form
       //1. Make variable to store data entry form
         var newForm = document.getElementById('userInput');
         //2. Create event listener
+        clearButton.addEventListener('click', function() {
+          newForm.textContent = '';
+        });
         newForm.addEventListener('submit', function(event) {
           event.preventDefault(); //prevents whole page refresh
           //3. Validate inputs before submitting
