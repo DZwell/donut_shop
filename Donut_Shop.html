@@ -4,15 +4,19 @@
 </head>
 <body>
   <p id="donuts"></p>
-    <form id="textBoxes">
+    <form id="userInput">
         <label for="franchise">Location: </label>
         <input id="franchise" name="franchise" type="text">
+          <div id="franchiseAlert"></div>
         <label for="minCustomersPerHour">Minimum Customers per Hour: </label>
         <input id="midCustomersPerHour" name="minCustomersPerHour" type="number">
+          <div id="minCustAlert"></div>
         <label for="maxCustomersPerHour">Maximum Customers per Hour: </label>
         <input id="maxCustomersPerHour" name="maxCustomersPerHour" type="number">
+           <div id="maxCustAlert"></div>
         <label for="avrgDonutsPerCust">Average Donuts Per Customer: </label>
         <input id="avrgDonutsPerCust" name="avrgDonutsPerCust" type="number">
+          <div id="avrgDonutPerCustAlert"></div>
         <button id="submit" type="submit">Create New Location</button>
         <button id="clear" type="clear">Clear Form</button>
       </form>
