@@ -1,38 +1,43 @@
-var TopPotDonuts = window.TopPotDonuts;
-var locationName = document.getElementById('franchise');
-var minCustomers = document.getElementById('minCustomersPerHour');
-var maxCustomers = document.getElementById('maxCustomersPerHour');
-var avrgDonuts = document.getElementById('avrgDountsPerCust');
-var locationBoxes = document.getElementById('textBoxes');
-var submit = document.getElementById('submit');
-var clearLocationButton = document.getElementById('clear');
-var locationData = [];
-
-var renderData = function() {
-  franchise.innerHTML = '';
-  locationData = [];
-};
-
-var newFranchise = new TopPotDonuts(event.target.franchise.value, event.target.minCustomersPerHour.value, event.target.maxCustomersPerHour.value, event.target.avrgDountsPerCust.value);
-event.target.franchise.value = null;
-event.target.minCustomersPerHour.value = null;
-event.target.maxCustomersPerHour.value = null;
-event.target.avrgDountsPerCust.value  null;
-locationData.push(newFranchise);
 
 
-var renderLocation  = function() {
-  textBoxes.innerHTML = '';
-  locationData.forEach(function(franchise) {
-    locationBoxes.appendChild(franchise.render());
-  });
-};
-console.log(locationData);
+    var TopPotDonuts = window.TopPotDonuts;
 
-var noRefresh = function(event) {
-  event.preventDefault();
+    //Make event listener on data entry form
+      //1. Make variable to store data entry form
+        var newForm = document.getElementById('userInput');
+        //2. Create event listener
+        newForm.addEventListener('submit', function(event) {
+          event.preventDefault(); //prevents whole page refresh
+          //3. Validate inputs before submitting
+          if(!event.target.franchise.value) {
+            //3a. Create alert inside browser
+            var alert1 = document.getElementById('franchiseAlert')
+            var alert1Text = document.createTextNode('Location can\'t be left blank!');
+            return;
+          } else if(!event.target.minCustomersPerHour.value) {
+            var alert2 = document.getElementById('minCustomersPerHour')
+            var alert2Text = document.createTextNode('Minimum customers can\'t be left blank!');
+            return;
+          } else if(!event.target.maxCustomersPerHour.value) {
+            var alert3 = document.getElementById('maxCustAlert')
+            var alert3Text = document.createTextNode('Maximum customers can\'t be left blank!');
+            return;
+          } else if(!event.target.avrgDonutsPerCust.value) {
+            var alert4 = document.getElementById('avrgDountsPerCustAlert')
+            var alert4Text = document.createTextNode('Average donuts can\'t be left blank!');
+            return;
+          }
 
-  if(!event.target.franchise.value) {
-    return alert('Location cannot be blank');
-  }
-}
+    //Make new instance of donut shop for user input.
+    //First param must be 'franchise' since it was listed first in obj const, 2nd param is obj se we pass in obj literal using {}
+    var newFranchise = new TopPotDonuts(event.target.franchise.value, {minCustomersPerHour: event.target.minCustomersPerHour.value, maxCustomersPerHour: event.target.maxCustomersPerHour.value, avrgDonutsPerCust: event.target.avrgDonutsPerCust.value});
+    event.target.franchise.value = null;
+    event.target.minCustomersPerHour.value = null;
+    event.target.maxCustomersPerHour.value = null;
+    event.target.avrgDonutsPerCust.value = null;
+
+    //Call daily total and render functions respectively
+    newFranchise.dailyTotal();
+    newFranchise.render();
+
+    });
